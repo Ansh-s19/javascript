@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit and remove in dom</title>
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.719);font-size: 24px;">
+    <ul class="lang">
+        <li>javascript</li>
+    </ul>
+
+</body>
+<script>
+    function add(langname){
+  const li=document.createElement('li')
+  li.innerHTML=langname
+  document.querySelector('.lang').appendChild(li)
+    }
+
+    add("python")
+    add("html")
+
+ //more optmized way 
+    function addlang(langname){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.lang').appendChild(li)
+
+    }
+    addlang("swift")
+    addlang("dart")
+
+    //edit
+   const edit= document.querySelector('li:nth-child(2)')
+//    edit.innerHTML="mojo" //not optimized way
+
+  const li= document.createElement('li')
+//   li.textContent="modgill"
+  li.appendChild(document.createTextNode("ansh"))
+  edit.replaceWith(li)
+
+const third=document.querySelector('li:first-child')
+third.outerHTML='<li>sharma</li>'
+
+//remove
+const last=document.querySelector('li:last-child')
+last.remove()
+
+</script>
+
+</html>

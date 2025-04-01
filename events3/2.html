@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>good morning</h1>
+    <button id="but">hit</button>
+</body>
+<script>
+setTimeout(() => {
+    console.log("anshit");
+    
+}, 1000);//executes one time only after timeout
+
+const a=function(){
+    console.log("ansh");
+}
+setTimeout(a,2000)
+
+const change=setTimeout(() => {
+    const b=document.querySelector('h1')
+b.innerHTML="hello"
+const ad=document.querySelector('body')
+ad.style.backgroundColor="pink"
+}, 2000);
+
+const d=document.querySelector('#but')
+d.addEventListener('click',function(e){
+    d.innerHTML="stopped"
+clearTimeout(change)
+console.log("stopped");
+
+})
+</script>
+</html>
