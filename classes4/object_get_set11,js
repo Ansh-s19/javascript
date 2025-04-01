@@ -1,5 +1,5 @@
 const user = {
-    email: "ansh985sharma@gmail.com",
+    _email: "ansh985sharma@gmail.com",
     pass: "abc123",
   
     get email() {
@@ -8,4 +8,8 @@ const user = {
     set email(newEmail) {
       this._email = newEmail; 
     }
-  };
+  }
+
+  const a= Object.create(user) //factory function
+  console.log(a.email);
+  

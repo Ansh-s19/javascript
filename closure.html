@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+    
+</head>
+<body >
+     
+        <button id="orange">orange</button>
+        <button id="pink">pink</button>
+   
+    
+</body>
+<script>
+    let ab;
+    function init(){
+        let name="ansh"
+        function displayname(){
+            // let score=200;
+            console.log("inner 1",name);   
+        }
+        function aeiou(){
+            console.log("inner 2",name);
+            // console.log(score);  //child can use parents properties but 2 childs cannot share data btw them 
+        }
+        displayname();
+        aeiou();
+    }
+    init();
+
+  function web() {
+  const name = "alexa";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName; // when we return a function it not  only return a function but it return its  scope  (lexical scope)
+}
+const a = web();
+a();
+
+</script>
+<script>
+     function handler(color){
+
+        return function(){
+        document.body.style.backgroundColor=`${color}`
+        }//closure help in real world scenario as when we have 100 button and we cant hardcode each time that on this click this happen so we make a closure that is then used on all buttons click
+ }
+ document.getElementById('orange').onclick=handler("orange")
+    
+    
+ 
+ document.getElementById('pink').addEventListener('click',handler("pink")
+ )
+ 
+</script>
+</html>
